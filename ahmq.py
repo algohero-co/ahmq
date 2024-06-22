@@ -2,7 +2,7 @@ from typing import Callable
 
 import aio_pika
 
-from heartbeat import HeartBeat
+from framework.ahmq.heartbeat import HeartBeat
 
 
 class Ahmq:
