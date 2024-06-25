@@ -24,7 +24,7 @@ async def init_rmq():
 
 
 async def init_subscriber():
-    await ahmq.bind_and_consume(on_message, EXCHANGE_NAME_SIGNAL, "#.signal.orig.combined_eth", queue_name="combined_eth-subscriber-1")
+    await ahmq.bind_and_consume(on_message, EXCHANGE_NAME_SIGNAL, "#.signal.*.combined_eth", queue_name="combined_eth-subscriber-1")
 
 
 async def on_message(message: AbstractIncomingMessage) -> None:

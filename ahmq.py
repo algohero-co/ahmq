@@ -2,7 +2,7 @@ from typing import Callable
 
 import aio_pika
 
-from framework.ahmq.heartbeat import HeartBeat
+from heartbeat import HeartBeat
 
 
 class Ahmq:
@@ -19,7 +19,7 @@ class Ahmq:
         self.queues = {}
 
         # register into beat
-        self.heartbeat.register(self.check_connection_or_reconnect, interval=60)
+        self.heartbeat.register(self.check_connection_or_reconnect, interval=45)  # set interval to 45 sec/beat
 
     def __new__(cls, *args, **kwargs):
         """Singleton helper"""
