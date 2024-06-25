@@ -20,6 +20,7 @@ class Ahmq:
 
         # register into beat
         self.heartbeat.register(self.check_connection_or_reconnect, interval=45)  # set interval to 45 sec/beat
+        self.heartbeat.ticker()  # immediately start ticker
 
     def __new__(cls, *args, **kwargs):
         """Singleton helper"""

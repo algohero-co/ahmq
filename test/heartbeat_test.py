@@ -24,5 +24,5 @@ heartbeat.register(hello)
 heartbeat.ticker()
 
 
-# asyncio.get_event_loop().run_forever()
-asyncio.run(main())
+asyncio.get_event_loop().run_forever()
+# asyncio.run(main())
