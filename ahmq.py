@@ -45,7 +45,7 @@ class Ahmq:
                 raise
         return True
 
-    async def check_connection_or_reconnect(self):
+    async def check_connection_or_reconnect(self, **kwargs):
         """Check connection to RMQ. If not connected, then reconnect."""
         if self._isNotConnected():
             await self.connect()
